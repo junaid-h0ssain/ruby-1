@@ -1,0 +1,23 @@
+
+
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @booklist.In_Circulation %>
+    <%= @booklist.Book_Name %>
+  </h1>
+  <p class="lead">
+    <%= @booklist.Author %>  | 
+    <%= @booklist.Related_Department %>    
+    
+
+  </p>
+  <br/>
+
+<%= link_to 'Edit', edit_booklist_path(@booklist), class:"btn btn-secondary" %>
+
+<%= link_to 'Delete', @booklist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+   
+<%= link_to 'Back', booklists_path, class:"btn btn-dark" %>
+
+</div>

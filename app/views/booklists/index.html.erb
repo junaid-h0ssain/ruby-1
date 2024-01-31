@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Book List</h1>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Related Department</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+<div id="booklists">
+  <% @booklists.each do |booklist| %>
+    <%= render booklist %>
+    
+    <tr>
+      <td><%= booklist.In_Circulation %></td>
+      <td><%= booklist.Book_Name %></td>
+      <td><%= booklist.Author %></td>
+      <td><%= booklist.Related_Department %></td>
+      <td><%= link_to 'Expand', booklist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+    </tr>
+  <% end %>
+</div>
+</table>
+<%= link_to "New booklist", new_booklist_path %>
